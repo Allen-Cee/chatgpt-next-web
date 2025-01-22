@@ -288,7 +288,7 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gemini-pro": "2023-12",
   "gemini-pro-vision": "2023-12",
   "deepseek-chat": "2024-07",
-  "deepseek-coder": "2024-07",
+  "deepseek-reasoner": "2024-07",
 };
 
 export const DEFAULT_TTS_ENGINE = "OpenAI-TTS";
@@ -437,7 +437,7 @@ const iflytekModels = [
   "4.0Ultra",
 ];
 
-const deepseekModels = ["deepseek-chat", "deepseek-coder"];
+const deepseekModels = ["deepseek-chat", "deepseek-reasoner"];
 
 const xAIModes = ["grok-beta"];
 
@@ -595,17 +595,17 @@ export const DEFAULT_MODELS = [
   //     sorted: 12,
   //   },
   // })),
-  // ...deepseekModels.map((name) => ({
-  //   name,
-  //   available: true,
-  //   sorted: seq++,
-  //   provider: {
-  //     id: "deepseek",
-  //     providerName: "DeepSeek",
-  //     providerType: "deepseek",
-  //     sorted: 13,
-  //   },
-  // })),
+  ...deepseekModels.map((name) => ({
+    name,
+    available: true,
+    sorted: seq++,
+    provider: {
+      id: "deepseek",
+      providerName: "DeepSeek",
+      providerType: "deepseek",
+      sorted: 13,
+    },
+  })),
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
